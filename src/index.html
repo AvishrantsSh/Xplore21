@@ -1,10 +1,43 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <meta charset="utf-8">
-    <title></title>
-  </head>
-  <body>
-    Well hey there!!!
-  </body>
+
+<head>
+  <meta charset="utf-8">
+  <title>Xplore '21</title>
+
+  <!-- External Resources -->
+  <link href="../assets/css/fa.css" rel="stylesheet">
+  <link href="../assets/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+  <link href="../assets/boxicon/css/boxicons.min.css" rel="stylesheet">
+
+  <!-- My Styles -->
+  <link rel="stylesheet" href="../assets/css/styles.css">
+  <link rel="stylesheet" href="../assets/css/index.css">
+  <link rel="stylesheet" href="../assets/css/scroll.css">
+</head>
+
+<body>
+  <main>
+    <header>
+      <nav id="stickynav">
+        <div class="dropdown" style="display: inline-block;">
+          <button class="btn btn-secondary ctrlBtn dropdown-toggle" type="button" id="menuBtn" data-bs-toggle="dropdown"
+            aria-expanded="false">
+            <i class="bx bx-dots-vertical-rounded"></i>
+          </button>
+          <ul class="dropdown-menu dropdown-menu-dark" aria-labelledby="menuBtn">
+            <li><button class="dropdown-item" id="refreshBtn">Option 1</button></li>
+            <li><button class="dropdown-item" id="resetBtn">Option 2</button></li>
+            <li><button class="dropdown-item" id="folder_pick">Option 3</button></li>
+          </ul>
+        </div>
+        <button id="minBtn" class="ctrlBtn"><i class='bx bx-minus'></i></button>
+        <button id="resBtn" class="ctrlBtn"><i id="maxmin" class=""></i></button>
+        <button id="closeBtn" class="ctrlBtn"><i class="fas fa-times"></i></button>
+      </nav>
+    </header>
+  </main>
+  <script src="../assets/bootstrap/js/bootstrap.bundle.js"></script>
+  <script src="../assets/js/index.js"></script>
+</body>
 </html>

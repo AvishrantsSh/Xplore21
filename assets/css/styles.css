@@ -1,0 +1,58 @@
+
+*{
+    font-family: sans-serif;
+}
+
+/* Header Section */
+header{
+    width: 100vw;
+    height: 40px;
+    -webkit-app-region: drag;
+}
+#stickynav{
+    position: fixed;
+    right: 0;
+    width: fit-content;
+    -webkit-app-region: no-drag;
+}
+.ctrlBtn{
+    padding: 5px;
+    padding-left: 8px;
+    padding-right: 8px;
+    background-color: transparent;
+    border: 0;
+    outline: none;
+    transition: all 0.2s;
+}
+.ctrlBtn i{
+    font-size: 18px;
+    color: white;
+}
+
+.ctrlBtn:hover{
+    background-color: rgba(255, 0, 0, 0.9);
+}
+.closelogo{
+    background: url("data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0idXRmLTgiPz4NCjwhLS0gR2VuZXJhdG9yOiBBZG9iZSBJbGx1c3RyYXRvciAxNy4xLjAsIFNWRyBFeHBvcnQgUGx1Zy1JbiAuIFNWRyBWZXJzaW9uOiA2LjAwIEJ1aWxkIDApICAtLT4NCjwhRE9DVFlQRSBzdmcgUFVCTElDICItLy9XM0MvL0RURCBTVkcgMS4xLy9FTiIgImh0dHA6Ly93d3cudzMub3JnL0dyYXBoaWNzL1NWRy8xLjEvRFREL3N2ZzExLmR0ZCI+DQo8c3ZnIHZlcnNpb249IjEuMSIgaWQ9IkxheWVyXzEiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgeG1sbnM6eGxpbms9Imh0dHA6Ly93d3cudzMub3JnLzE5OTkveGxpbmsiIHg9IjBweCIgeT0iMHB4Ig0KCSB2aWV3Qm94PSIwIDAgNTAgNTAiIGVuYWJsZS1iYWNrZ3JvdW5kPSJuZXcgMCAwIDUwIDUwIiB4bWw6c3BhY2U9InByZXNlcnZlIj4NCjxwYXRoIGZpbGw9IiMyMzFGMjAiIGQ9Ik05LjAxNiw0MC44MzdjMC4xOTUsMC4xOTUsMC40NTEsMC4yOTIsMC43MDcsMC4yOTJjMC4yNTYsMCwwLjUxMi0wLjA5OCwwLjcwOC0wLjI5M2wxNC4yOTItMTQuMzA5DQoJbDE0LjI5MiwxNC4zMDljMC4xOTUsMC4xOTYsMC40NTEsMC4yOTMsMC43MDgsMC4yOTNjMC4yNTYsMCwwLjUxMi0wLjA5OCwwLjcwNy0wLjI5MmMwLjM5MS0wLjM5LDAuMzkxLTEuMDIzLDAuMDAxLTEuNDE0DQoJTDI2LjE1MywyNS4xMjlMNDAuNDMsMTAuODM2YzAuMzktMC4zOTEsMC4zOS0xLjAyNC0wLjAwMS0xLjQxNGMtMC4zOTItMC4zOTEtMS4wMjQtMC4zOTEtMS40MTQsMC4wMDFMMjQuNzIyLDIzLjczMkwxMC40Myw5LjQyMw0KCWMtMC4zOTEtMC4zOTEtMS4wMjQtMC4zOTEtMS40MTQtMC4wMDFjLTAuMzkxLDAuMzktMC4zOTEsMS4wMjMtMC4wMDEsMS40MTRsMTQuMjc2LDE0LjI5M0w5LjAxNSwzOS40MjMNCglDOC42MjUsMzkuODEzLDguNjI1LDQwLjQ0Nyw5LjAxNiw0MC44Mzd6Ii8+DQo8L3N2Zz4NCg==");
+}
+/* Main Body */
+body{
+    background-color: #333;
+    color: white;
+    overflow-x: hidden;
+}
+
+/* Footer */
+.footer{
+    position: absolute;
+    min-height: 10vh;
+    overflow: hidden;
+    background-color: #222;
+    width: 100vw;
+    margin: 0;
+    bottom: 0;
+}
+
+.dropdown-toggle::after {
+    display: none;
+}

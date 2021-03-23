@@ -14,6 +14,13 @@ const createWindow = () => {
   mainWindow = new BrowserWindow({
     width: 800,
     height: 600,
+    frame: false,
+    show: false,
+    webPreferences: {
+      nodeIntegration: true,
+      enableRemoteModule: true,
+      contextIsolation: false,
+    }
   });
 
   // and load the index.html of the app.
@@ -21,6 +28,11 @@ const createWindow = () => {
 
   // Open the DevTools.
   mainWindow.webContents.openDevTools();
+
+  // Load when content is ready
+  mainWindow.once('ready-to-show', () => {
+    mainWindow.show()
+  })
 
   // Emitted when the window is closed.
   mainWindow.on('closed', () => {
@@ -30,6 +42,8 @@ const createWindow = () => {
     mainWindow = null;
   });
 };
+
+
 
 // This method will be called when Electron has finished
 // initialization and is ready to create browser windows.
