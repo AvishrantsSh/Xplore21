@@ -1,3 +1,3 @@
 # Xplore '21
 
-Great project on the way!! Stay tuned.
+This directory contains the source code for the Desktop Application developed for this hack.
