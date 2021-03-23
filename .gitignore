@@ -1,0 +1,5 @@
+node_modules
+out
+*.pyc
+db.sqlite3
+__pycache__
