@@ -47,6 +47,7 @@
     }
   },
   "dependencies": {
+    "axios": "^0.21.1",
     "electron-compile": "^6.4.4",
     "electron-squirrel-startup": "^1.0.0"
   },

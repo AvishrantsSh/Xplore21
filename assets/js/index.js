@@ -3,6 +3,7 @@ const path = require('path')
 const remote = electron.remote
 const ipc = electron.ipcRenderer
 const currWin = remote.getCurrentWindow()
+const axios = require('axios')
 
 // Control Buttons
 const closeBtn = document.getElementById('closeBtn')
@@ -36,6 +37,18 @@ function init() {
         maxmin.className = 'far fa-square'
     else
         maxmin.className = "far fa-clone";
+
+    axios
+        .post('http://localhost:8000/api/', {
+            stoken: 'Buy the milk'
+        })
+        .then(res => {
+            console.log(`statusCode: ${res.statusCode}`)
+            console.log(res)
+        })
+        .catch(error => {
+            console.error(error)
+        })
 }
 
 window.onload = init
