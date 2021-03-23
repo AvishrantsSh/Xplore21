@@ -2,6 +2,7 @@ from django.shortcuts import render
 from django.http import JsonResponse, HttpResponse
 from django.views.decorators.csrf import csrf_exempt
 from .models import DocModel
+import json
 
 
 def HomeView(request):
@@ -12,9 +13,9 @@ def HomeView(request):
 def APIEnd(request):
     if request.method == 'POST':
         try:
-            stoken = request.POST['stoken']
-            # vid = request.FILES['video']
-            return JsonResponse({'status': 'ok', 'message': f'Files Received from sender {23}'})
+            fdata = json.loads(request.body.decode())
+            stoken = fdata['stoken']
+            return JsonResponse({'status': 'ok', 'message': f'Files Received from sender {stoken}'})
         except:
             return HttpResponse(status=400)
 
