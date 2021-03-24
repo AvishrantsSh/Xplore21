@@ -1,6 +1,6 @@
 from django.views.decorators.clickjacking import xframe_options_exempt
 import numpy as np
-from django.shortcuts import render, redirect
+from django.shortcuts import render, redirect, reverse
 from django.http import JsonResponse, HttpResponse, StreamingHttpResponse
 from django.views.decorators.csrf import csrf_exempt
 from .models import DocModel
@@ -72,21 +72,38 @@ def HomeView(request):
         return render(request, 'home.html', {'form': form})
 
 
-@xframe_options_exempt
+# @xframe_options_exempt
 def StreamView(request):
     entry = DocModel.objects.all().last()
+    if entry is None:
+        return JsonResponse({'message': 'No Video Files Yet!'})
     return render(request, 'stream.html', {'url': 'http://127.0.0.1:8000'+entry.vid.url})
 
+
 # API End Point
+
+
+def StreamToken(request, token):
+    try:
+        entry = DocModel.objects.filter(stoken=token).last()
+        if entry is None:
+            return JsonResponse({'message': 'Token Not Registered'})
+
+        return render(request, 'streamtoken.html', {'url': 'http://127.0.0.1:8000'+entry.vid.url})
+
+    except DocModel.DoesNotExist:
+        return JsonResponse({'message': 'Token Not Registered'})
 
 
 @csrf_exempt
 def APIEnd(request):
     if request.method == 'POST':
         try:
-            fdata = json.loads(request.body.decode())
-            stoken = fdata['stoken']
-            return JsonResponse({'status': 'ok', 'message': f'Files Received from sender {stoken}'})
+            stoken = request.POST['stoken']
+            vidFile = request.FILES['vid']
+            DocModel(stoken=stoken, vid=vidFile).save()
+            baseurl = request.build_absolute_uri(reverse('home'))
+            return JsonResponse({'status': 'ok', 'message': f'Files Received from sender {stoken}', 'vidurl': baseurl+'streamtoken/'+stoken})
         except:
             return HttpResponse(status=400)
 

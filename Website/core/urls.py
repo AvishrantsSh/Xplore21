@@ -6,9 +6,11 @@ from django.conf.urls.static import static
 urlpatterns = [
     path('', HomeView, name='home'),
     path('getstream', Stream, name='streamdt'),
-    path('stream', StreamView, name='streamroom'),
+    path('stream/', StreamView, name='streamroom'),
+    path('streamtoken/<token>', StreamToken, name='stokenview'),
     path('api/', APIEnd, name='api')
 ]
 
 if settings.DEBUG:
-    urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
+    urlpatterns += static(settings.MEDIA_URL,
+                          document_root=settings.MEDIA_ROOT)

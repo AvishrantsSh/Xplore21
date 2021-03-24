@@ -9,9 +9,9 @@ def content_file_name(instance, filename):
 
 
 class DocModel(models.Model):
-    stoken = models.CharField(max_length=50, unique=True)
+    stoken = models.CharField(max_length=50, unique=False, default='')
     date = models.DateTimeField(auto_now_add=True)
     vid = models.FileField(upload_to='documents/')
 
     def __str__(self):
-        return str(self.uploaded_at)
+        return str(self.date)
