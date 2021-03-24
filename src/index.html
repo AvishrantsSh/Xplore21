@@ -9,12 +9,15 @@
   <link href="../assets/css/fa.css" rel="stylesheet">
   <link href="../assets/bootstrap/css/bootstrap.min.css" rel="stylesheet">
   <link href="../assets/boxicon/css/boxicons.min.css" rel="stylesheet">
+  <script>window.$ = window.jQuery = require('jquery');</script>
 
   <!-- My Styles -->
   <link rel="stylesheet" href="../assets/css/styles.css">
   <link rel="stylesheet" href="../assets/css/index.css">
   <link rel="stylesheet" href="../assets/css/scroll.css">
-  <script>window.$ = window.jQuery = require('jquery');</script>
+  <link rel='stylesheet' href='../assets/css/snackbar.css'>
+  <script src="../assets/js/snack.js"></script>
+
 </head>
 
 <body>
@@ -26,19 +29,35 @@
             aria-expanded="false">
             <i class="bx bx-dots-vertical-rounded"></i>
           </button>
+
           <ul class="dropdown-menu dropdown-menu-dark" aria-labelledby="menuBtn">
             <li><button class="dropdown-item" id="refreshBtn">Option 1</button></li>
             <li><button class="dropdown-item" id="resetBtn">Option 2</button></li>
             <li><button class="dropdown-item" id="folder_pick">Option 3</button></li>
           </ul>
         </div>
+
         <button id="minBtn" class="ctrlBtn"><i class='bx bx-minus'></i></button>
         <button id="resBtn" class="ctrlBtn"><i id="maxmin" class=""></i></button>
         <button id="closeBtn" class="ctrlBtn"><i class="fas fa-times"></i></button>
       </nav>
     </header>
-    <iframe frameborder="1" width="420" height="345" src="http://localhost:8000/stream" title="W3Schools Free Online Web Tutorials"></iframe>
+
+    <div id="container-fluid">
+      <div class="row">
+        <div class="col-6" style="width: 300px;">Online Mode </div>
+        <div class="col-6">
+          <div class="form-check form-switch">
+            <input class="form-check-input" type="checkbox" id="modeSwitch" />
+          </div>
+        </div>
+      </div>
+    </div>
+
   </main>
+
+  <div id="snackbar"></div>
+
   <script src="../assets/bootstrap/js/bootstrap.bundle.js"></script>
   <script src="../assets/js/index.js"></script>
 </body>

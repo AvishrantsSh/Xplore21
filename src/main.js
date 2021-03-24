@@ -1,4 +1,5 @@
-import { app, BrowserWindow } from 'electron';
+import { app, BrowserWindow, Notification } from 'electron';
+const ipc = require('electron').ipcMain
 
 // Handle creating/removing shortcuts on Windows when installing/uninstalling.
 if (require('electron-squirrel-startup')) { // eslint-disable-line global-require
@@ -48,7 +49,10 @@ const createWindow = () => {
 // This method will be called when Electron has finished
 // initialization and is ready to create browser windows.
 // Some APIs can only be used after this event occurs.
-app.on('ready', createWindow);
+app.on('ready', () => {
+  app.allowRendererProcessReuse = true
+  createWindow()
+});
 
 // Quit when all windows are closed.
 app.on('window-all-closed', () => {
@@ -69,3 +73,24 @@ app.on('activate', () => {
 
 // In this file you can include the rest of your app's specific main process
 // code. You can also put them in separate files and import them here.
+ipc.on('notify', function (event, arg) {
+  const mynotification = new Notification({
+    title: 'Message',
+    body: 'Lorem Ipsum'
+  })
+  mynotification.addListener('click', () => {
+    let resWindow = new BrowserWindow({
+      minWidth: 800,
+      minHeight: 600,
+      frame: true,
+      // show: false,
+      webPreferences: {
+        nodeIntegration: false,
+      }
+    });
+
+    resWindow.loadURL(arg);
+
+  })
+  mynotification.show()
+})
