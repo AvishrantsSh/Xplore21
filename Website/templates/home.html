@@ -1,13 +1,25 @@
 <!DOCTYPE html>
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Xplore '21 Endpoint</title>
 </head>
+
 <body>
-    Welcome to the API!!
+    Welcome to the Portal!!
+    <form method="post" enctype="multipart/form-data" id="vid_form">
+        {% csrf_token %}
+        <input type="file" name="vid" required="" id="id_vid">
+    </form>
+    <script type="text/javascript">
+        document.getElementById('vid_form').onchange = function () {
+            document.getElementById('vid_form').submit();
+        };
+    </script>
 </body>
+
 </html>
