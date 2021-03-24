@@ -39,15 +39,15 @@ function init() {
     else
         maxmin.className = "far fa-clone";
 
-    axios.post('http://localhost:8000/api/', {
-        stoken: "OP",
-        file: "gg",
-    }).then(res => {
-        console.log(`statusCode: ${res.statusCode}`)
-        console.log(res)
-    }).catch(error => {
-        console.error(error)
-    })
+    // axios.post('http://localhost:8000/api/', {
+    //     stoken: "OP",
+    //     file: "gg",
+    // }).then(res => {
+    //     console.log(`statusCode: ${res.statusCode}`)
+    //     console.log(res)
+    // }).catch(error => {
+    //     console.error(error)
+    // })
 }
 
 window.onload = init
