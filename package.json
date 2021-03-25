@@ -1,7 +1,7 @@
 {
   "name": "xplore",
   "productName": "xplore",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "My Electron application description",
   "main": "src/main.js",
   "scripts": {
@@ -29,7 +29,14 @@
         ]
       },
       "electronPackagerConfig": {
-        "packageManager": "npm"
+        "packageManager": "npm",
+        "asar": true,
+        "overwrite": true,
+        "ignore": [
+          "^(/Website$)",
+          ".gitignore",
+          "^(/Machine Learning$)"
+        ]
       },
       "electronWinstallerConfig": {
         "name": "xplore"
