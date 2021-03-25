@@ -11,18 +11,16 @@ The system will detect and simultaneously alert any violent activity captured by
 
 ### 🛠 &nbsp;Tech Stack
 ![Tensorflow](https://img.shields.io/badge/TensorFlow%20-%23FF6F00.svg?&style=for-the-badge&logo=TensorFlow&logoColor=white)&nbsp;
-![keras](https://img.shields.io/badge/Keras%20-%23D00000.svg?&style=for-the-badge&logo=Keras&logoColor=white)&nbsp;
+![Keras](https://img.shields.io/badge/Keras%20-%23D00000.svg?&style=for-the-badge&logo=Keras&logoColor=white)&nbsp;
 ![Django](https://img.shields.io/badge/django%20-%23092E20.svg?&style=for-the-badge&logo=django&logoColor=white)&nbsp;
- 
+![Node.js](https://img.shields.io/badge/node.js%20-%2343853D.svg?&style=for-the-badge&logo=node.js&logoColor=white)&nbsp;
+![AWS](https://img.shields.io/badge/AWS%20-%23FF9900.svg?&style=for-the-badge&logo=amazon-aws&logoColor=white)&nbsp;
 ![Python](https://img.shields.io/badge/python%20-%2314354C.svg?&style=for-the-badge&logo=python&logoColor=white)&nbsp;
-![aws](https://img.shields.io/badge/AWS%20-%23FF9900.svg?&style=for-the-badge&logo=amazon-aws&logoColor=white)&nbsp;
 ![HTML](https://img.shields.io/badge/html5%20-%23E34F26.svg?&style=for-the-badge&logo=html5&logoColor=white)&nbsp;
 ![CSS](https://img.shields.io/badge/css3%20-%231572B6.svg?&style=for-the-badge&logo=css3&logoColor=white)&nbsp;
 ![Javascipt](https://img.shields.io/badge/javascript%20-%23323330.svg?&style=for-the-badge&logo=javascript&logoColor=%23F7DF1E)
 <br>
 
-### 💼 &nbsp; Working
- 
 
 ###  ✍️ &nbsp; Current Progress
 We tried and tested various architectures for this project. A brief summary and stats for each is given below:
@@ -37,19 +35,19 @@ We tried and tested various architectures for this project. A brief summary and 
     - Epochs: 50
     - steps_per_epoch: 50 
     <br><br>
-    <img src="stats/CustomisedCNN.png">
+    <img src="Machine Learning/stats/CustomisedCNN.png">
     <br><br>
 
 2. **VGG Net**: VGGNet Architecture displayed an accuracy of 60% on training and 55% on testing dataset.
     - Testing Accuracy: 0.5513
     <br><br>
-    <img src="stats/VGGNet.png">
+    <img src="Machine Learning/stats/VGGNet.png">
     <br><br>
 
 3. **AlexNet**: AlexNet showed accuracy of 57% on training and a similar accuracy on the testing dataset. 
     - Testing Accuracy: 0.5729
     <br><br>
-    <img src="stats/AlexNet .png">
+    <img src="Machine Learning/stats/AlexNet .png">
     <br><br>
 
 4. **Inception+CustomisedCNN**: Using transfer learning of Inception Architecture and passing it to CustomisedCNN trained the model with satisfactory results. 
@@ -61,10 +59,66 @@ We tried and tested various architectures for this project. A brief summary and 
     - Optimizer: RMSprop with LR 0.0001
     - Loss: Binarycrossentropy
     <br><br>
-    <img src="stats/CustomisedInceptionV3+CNN.png">
+    <img src="Machine Learning/stats/CustomisedInceptionV3+CNN.png">
     <br><br>
 
 ### ⚙️ &nbsp; Ultimate Objective
 The model uses the technique of Multiple Object Detection with Localization tracking the movement of people and then categorizing it into violent or non-violent behavior. Our proposed solution will ensure Public Safety and security without any human toil with an instant alert to the concerned authorities. Through ***Crowd Monitoring and Behavioral Analysis*** our solution aims to evoke the sense of security in men and women. The constant rise of criminal activities, their unexpectedness, and scope of harm that can be inflicted can be exponentially reduced through our proposed system. 
 
 *Link to current protoytpe* : [Click Here](http://ec2-18-206-46-76.compute-1.amazonaws.com:8000/)
+
+### 💼 &nbsp; Testing
+Our source code can be tested and contributed to using the following steps:
+## 1. Website
+Execute the following sequence of code to start contributing and testing:
+- Open the directory labelled Website using the command
+    > cd Website
+
+- Install all the dependencies using
+    > pip3 install -r requirements.txt
+
+- Run the migrations using the following commands
+    > python3 manage.py makemigrations
+
+    > python3 manage.py migrate
+
+- Run the Django server by
+    > python3 manage.py runserver
+
+<br>
+
+*Note :*  In case you encounter errors during migrations, make sure that you have access rights to *db.sqlite3* file. You can use the following command to rectify permission denied error
+> chown {{username}} db.sqlite3
+
+Run the migrations again to continue.
+
+
+## 2. Desktop App
+Being built on top of Node.js, it is fairly easy to set-up the environment. Follow the steps to safely configure the system
+- From the parent folder directory, execute the following command
+    > npm install
+
+- Once finished, the application can be run using
+    > npm start
+
+- The desktop app has two modes of operation: **Offline** and **Online**. By default the app function in **Online** mode. To make it work in **Offline** mode, use the menu button provided on top of UI and select Offline mode.
+<br><br>
+    <img src="ss.png">
+    <br><br>
+<br>
+
+*Note :* This Project requires **OpenCV, Numpy, Django** and **Tensorflow** installed on the host machine. To install these dependencies, run the following command
+> pip3 install -r requirements.txt
+
+## Link to Desktop Apps
+| Platform    | Link |
+| ----------- | ---- |
+| Windows (.exe) |[Link](https://github.com/AvishrantsSh/Xplore21/releases/download/v1.1.0/xplore-Setup-1.1.0.exe)|
+| Linux (.AppImage) |[Link](https://github.com/AvishrantsSh/Xplore21/releases/download/v1.1.0/xplore-1.1.0.AppImage) |
+| Mac (.dmg) |[Link](https://github.com/AvishrantsSh/Xplore21/releases/download/v1.1.0/xplore-1.1.0.dmg) |
+
+<br>
+
+## Custom Build
+If you want to create the desktop app for a different platform or a different extension like **.deb**, **.rpm**, use the following command from parent folder
+> electron-forge make 

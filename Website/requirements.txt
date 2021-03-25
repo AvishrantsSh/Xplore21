@@ -1,0 +1,5 @@
+django
+gunicorn
+tensorflow
+opencv-python
+numpy
