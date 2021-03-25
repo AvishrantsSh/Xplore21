@@ -29,14 +29,7 @@
         ]
       },
       "electronPackagerConfig": {
-        "packageManager": "npm",
-        "asar": true,
-        "overwrite": true,
-        "ignore": [
-          "^(/Website$)",
-          ".gitignore",
-          "^(/Machine Learning$)"
-        ]
+        "packageManager": "npm"
       },
       "electronWinstallerConfig": {
         "name": "xplore"
