@@ -1,0 +1,42 @@
+
+*{
+    font-family: sans-serif;
+}
+
+/* Header Section */
+header{
+    top: 0;
+    width: 100vw;
+    height: 40px;
+    -webkit-app-region: drag;
+}
+#stickynav{
+    position: fixed;
+    right: 0;
+    width: fit-content;
+    -webkit-app-region: no-drag;
+}
+.ctrlBtn{
+    padding: 5px;
+    padding-left: 8px;
+    padding-right: 8px;
+    background-color: transparent;
+    border: 0;
+    outline: none;
+    transition: all 0.2s;
+}
+.ctrlBtn i{
+    font-size: 18px;
+    color: white;
+}
+
+.ctrlBtn:hover{
+    background-color: rgba(255, 0, 0, 0.9);
+}
+
+/* Main Body */
+body{
+    background-color: #333;
+    color: white;
+    overflow-x: hidden;
+}

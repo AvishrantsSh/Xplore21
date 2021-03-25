@@ -78,17 +78,20 @@ ipc.on('notify', function (event, arg) {
     title: 'Message',
     body: 'Lorem Ipsum'
   })
+
   mynotification.addListener('click', () => {
     let resWindow = new BrowserWindow({
       minWidth: 800,
       minHeight: 600,
-      frame: true,
+      resizable: false,
+      frame: false,
       // show: false,
       webPreferences: {
-        nodeIntegration: false,
+        nodeIntegration: true,
+        enableRemoteModule: true,
       }
     });
-
+    resWindow.webContents.openDevTools();
     resWindow.loadURL(arg);
 
   })
