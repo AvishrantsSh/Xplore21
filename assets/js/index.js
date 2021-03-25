@@ -48,8 +48,26 @@ modeBtn.addEventListener('click', () => {
     }
 })
 
+document.getElementById('vid').onchange = async => {
+    sendFile()
+}
+
 vidForm.onsubmit = async (e) => {
     e.preventDefault();
+    sendFile()
+}
+function notify(msg) {
+    document.getElementById('snackbar').textContent = msg
+    snack()
+}
+
+function init() {
+    if (currWin.isMaximized())
+        maxmin.className = 'far fa-square'
+    else
+        maxmin.className = "far fa-clone";
+}
+function sendFile() {
     var formData = new FormData();
     var vidFile = document.querySelector('#vid');
     formData.append("stoken", "test123")
@@ -72,17 +90,5 @@ vidForm.onsubmit = async (e) => {
         console.error(error)
     })
 }
-function notify(msg) {
-    document.getElementById('snackbar').textContent = msg
-    snack()
-}
-
-function init() {
-    if (currWin.isMaximized())
-        maxmin.className = 'far fa-square'
-    else
-        maxmin.className = "far fa-clone";
-}
-
 window.onload = init
 console.log('Script is Working Fine')
