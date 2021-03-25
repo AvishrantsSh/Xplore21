@@ -35,8 +35,7 @@
         "ignore": [
           "^(/Website$)",
           ".gitignore",
-          "^(/Machine Learning$)",
-          "^(/.github$)"
+          "^(/Machine Learning$)"
         ]
       },
       "electronWinstallerConfig": {
