@@ -26,7 +26,7 @@ minBtn.addEventListener('click', function () {
 onlineBtn.addEventListener('click', () => {
     notify('Switched to Online Mode')
     document.getElementById('mode').textContent = 'Online'
-    document.getElementById('addr').textContent = 'http://amazon.com'
+    document.getElementById('addr').textContent = 'http://ec2-18-206-46-76.compute-1.amazonaws.com:8000/'
     online = true
 })
 
@@ -59,7 +59,7 @@ function sendFile() {
 
     let url = ''
     if (online == true)
-        url = 'http://localhost:8000/api/'
+        url = 'http://ec2-18-206-46-76.compute-1.amazonaws.com:8000/'
     else
         url = 'http://localhost:8000/api/'
 
