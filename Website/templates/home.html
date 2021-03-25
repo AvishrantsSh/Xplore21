@@ -6,15 +6,241 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Xplore '21 Endpoint</title>
+    <title>Xplore '21</title>
+    <!-- Favicons -->
+    <link href="assets/img/favicon.png" rel="icon">
+    <link href="assets/img/apple-touch-icon.png" rel="apple-touch-icon">
+    <!-- Google Fonts -->
+    <link
+        href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Montserrat:300,300i,400,400i,500,500i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i"
+        rel="stylesheet">
+    <!-- Vendor CSS Files -->
+    <link href="assets/vendor/aos/aos.css" rel="stylesheet">
+    <link href="assets/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <link href="assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
+    <link href="assets/vendor/boxicons/css/boxicons.min.css" rel="stylesheet">
+    <link href="assets/vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
+    <link href="assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
+    <!-- Template Main CSS File -->
+    <link href="assets/css/scroll.css" rel="stylesheet">
+    <link href="assets/css/style.css" rel="stylesheet">
 </head>
 
 <body>
-    Welcome to the Portal!!
-    <form method="post" enctype="multipart/form-data" id="vid_form">
-        {% csrf_token %}
-        <input type="file" name="vid" required="" id="id_vid">
-    </form>
+    <section id="hero">
+        <div class="hero-container">
+            <div class="hero-logo" data-aos="zoom-in"><img src="assets/img/favicon.png" alt="" id="main_img"></div>
+            <h1 data-aos="zoom-in"><span id="glow">Vision</span></h1>
+            <h2 data-aos="fade-up">Problem Domain: Safety and Surveillance</h2>
+            <a data-aos="fade-up" data-aos-delay="200" href="#about" class="btn-get-started scrollto">Get Started</a>
+        </div>
+    </section><!-- End Hero -->
+
+    <!-- ======= Header ======= -->
+    <header id="header" class="d-flex align-items-center">
+        <div class="container d-flex align-items-center justify-content-between">
+
+            <div class="logo">
+                <span id="nav-title">Vision</span>
+            </div>
+
+            <nav id="navbar" class="navbar">
+                <ul>
+                    <li><a class="nav-link scrollto active" href="#hero">Home</a></li>
+                    <li><a class="nav-link scrollto" href="#about">About</a></li>
+                    <li><a class="nav-link scrollto" href="#services">Services</a></li>
+                    <li><a class="nav-link scrollto" href="#team">Team</a></li>
+            </nav>
+
+        </div>
+    </header><!-- End Header -->
+
+    <main id="main">
+
+        <!-- ======= About Us Section ======= -->
+        <section id="about" class="about">
+            <div class="container">
+                <div class="section-title" data-aos="fade-up">
+                    <h3>Solving the issue from a different, wider perspective. </h3>
+                </div>
+
+                <div class="row">
+                    <div class="col-lg-6" data-aos="fade-right">
+                        <div class="image" style="padding-top: 0;">
+                            <img src="assets/img/about.png" class="img-fluid" alt="">
+                        </div>
+                    </div>
+                    <div class="col-lg-6 pt-3" data-aos="fade-left">
+                        <div class="content pt-4 pt-lg-0 pl-0 pl-lg-3 ">
+                            <h4>Surveillance is an integral part of security and control.</h4>
+                            <p class="font-italic">
+                                Requires extended periods of examining multiple footages for evidence. This manual task
+                                provides
+                                evidence in court but is rarely used to detect and prevent crime in real-time.
+                                We bring a solution to ensure a step towards safety of women and reduce the crime
+                                statistics.
+
+                            </p>
+                            <h4>In Delhi</h4>
+                            <ul>
+                                <li><i class="bx bx-check-double"></i> 11,542 cases of crime in 2017</li>
+                                <li><i class="bx bx-check-double"></i> 1,05,000 CCTV cameras are installed in public
+                                    places.</li>
+                                <li><i class="bx bx-check-double"></i> 1,40,000 CCTV cameras are in the process of
+                                    installation.</li>
+                            </ul>
+                            <p>
+                                We convert an evidence collecting tool to a crime prevention and detection tool.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </section><!-- End About Us Section -->
+        <section id="upload" class="upload">
+            <div id="particles-js"></div>
+            <div class="section-title" data-aos="fade-up">
+                <h2>Test our Project Live!</h2>
+                <p>Use the button given below to test out our project.</p>
+            </div>
+            <div class="d-flex align-items-center justify-content-center" data-aos="fade-up">
+                <form method="post" enctype="multipart/form-data" id="vid_form">
+                    {% csrf_token %}
+                    <input type="file" accept=".mp4" name="vid" required="" id="id_vid" hidden>
+                    <label for="id_vid" class=" fBtn cta-btn align-middle" style="cursor: pointer;">Choose Video
+                        File</label>
+                    <button class="btn btn-secondary" hidden>Submit</button>
+                </form>
+            </div>
+
+        </section>
+        </section>
+        <!-- ======= Services Section ======= -->
+        <section id="services" class="services">
+            <div class="container">
+                <div class="section-title" data-aos="fade-up">
+                    <h2>Tech Stack</h2>
+                    <p>This project encompasses various technologies within itself.</p>
+                </div>
+
+                <div class="row">
+                    <div class="col-12 col-lg-6 icon-box mt-2" data-aos="fade-up">
+                        <i class="bx bx-receipt"></i>
+                        <h4>Est labore ad</h4>
+                        <p>Consequuntur sunt aut quasi enim aliquam quae harum pariatur laboris nisi ut aliquip</p>
+                    </div>
+                    <div class="col-12 col-lg-6 icon-box mt-2" data-aos="fade-up" data-aos-delay="100">
+                        <i class="bx bx-cube-alt"></i>
+                        <h4>Harum esse qui</h4>
+                        <p>Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt</p>
+                    </div>
+                    <div class="col-12 col-lg-6 icon-box mt-2" data-aos="fade-up" data-aos-delay="200">
+                        <i class="bx bx-images"></i>
+                        <h4>Aut occaecati</h4>
+                        <p>Aut suscipit aut cum nemo deleniti aut omnis. Doloribus ut maiores omnis facere</p>
+                    </div>
+                    <div class="col-12 col-lg-6 icon-box mt-2" data-aos="fade-up" data-aos-delay="300">
+                        <i class="bx bx-shield"></i>
+                        <h4>Beatae veritatis</h4>
+                        <p>Expedita veritatis consequuntur nihil tempore laudantium vitae denat pacta</p>
+                    </div>
+                </div>
+
+            </div>
+        </section><!-- End Services Section -->
+
+        <section id="team" class="team">
+            <div class="container">
+
+                <div class="section-title" data-aos="fade-up">
+                    <h2>Team</h2>
+                    <p>Working for a better tomorrow</p>
+                </div>
+
+                <div class="row">
+                    <div class="col-lg-4 col-md-6 d-flex align-items-stretch">
+                        <div class="member d-flex flex-column align-items-center" data-aos="zoom-in">
+                            <div class="member-img">
+                                <img src="assets/img/team/av2.png" class="img-fluid" alt="">
+                            </div>
+                            <div class="member-info">
+                                <h4>Avishrant Sharma</h4>
+                                <span>CSE 2ND YEAR</span>
+                            </div>
+
+                        </div>
+                    </div>
+
+                    <div class="col-lg-4 col-md-6 d-flex align-items-stretch">
+                        <div class="member d-flex flex-column align-items-center" data-aos="zoom-in"
+                            data-aos-delay="100">
+                            <div class="member-img">
+                                <img src="assets/img/team/ritik.png" class="img-fluid" alt="">
+
+                            </div>
+                            <div class="member-info">
+                                <h4>Ritik Dhiman</h4>
+                                <span>ECE 2ND YEAR</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-lg-4 col-md-6 d-flex align-items-stretch">
+                        <div class="member d-flex flex-column align-items-center" data-aos="zoom-in"
+                            data-aos-delay="200">
+                            <div class="member-img">
+                                <img src="assets/img/team/spriha.png" class="img-fluid" alt="">
+                            </div>
+                            <div class="member-info">
+                                <h4>Spriha Gautam</h4>
+                                <span>CSE 2nd year</span>
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section><!-- End Team Section -->
+
+    </main><!-- End #main -->
+
+    <footer id="footer">
+        <div class="footer-top">
+            <div class="container">
+                <div class="row justify-content-center">
+                    <div class="col-lg-6">
+                        <a href="#header" class="scrollto footer-logo"><img src="assets/img/hero-logo.png" alt=""></a>
+                        <h3>Team Enigma</h3>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="container footer-bottom clearfix">
+            <div class="copyright">
+                &copy; Copyright <strong><span>Knight</span></strong>. All Rights Reserved
+            </div>
+            <div class="credits">
+                Designed by <a href="https://bootstrapmade.com/">BootstrapMade</a>
+            </div>
+        </div>
+    </footer><!-- End Footer -->
+
+    <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i
+            class="bi bi-arrow-up-short"></i></a>
+
+    <!-- Vendor JS Files -->
+    <script src="assets/vendor/aos/aos.js"></script>
+    <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <script src="assets/vendor/glightbox/js/glightbox.min.js"></script>
+    <script src="assets/vendor/isotope-layout/isotope.pkgd.min.js"></script>
+    <script src="assets/vendor/swiper/swiper-bundle.min.js"></script>
+    <script src="assets/particles/particles.min.js"></script>
+    <script src="assets/particles/app.js"></script>
+    <!-- Template Main JS File -->
+    <script src="assets/js/main.js"></script>
+
     <script type="text/javascript">
         document.getElementById('vid_form').onchange = function () {
             document.getElementById('vid_form').submit();
