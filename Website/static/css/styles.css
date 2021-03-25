@@ -40,3 +40,9 @@ body{
     color: white;
     overflow-x: hidden;
 }
+
+#backLink{
+    font-size: 20px;
+    color: white;
+    text-decoration: none;
+}

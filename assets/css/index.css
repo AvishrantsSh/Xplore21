@@ -19,3 +19,19 @@
     color: #fff;
     background: #ef6603;
 }
+#glow{
+    font-size: 10vh;
+    font-weight: 100;
+    line-height: 1;
+    text-transform: uppercase;
+    text-shadow: 0 0 10px #c8f308, 0 0 20px #c8f308, 0 0 30px #c8f308, 0 0 40px #e0d314, 0 0 70px #e0d314, 0 0 80px #e0d314, 0 0 100px #e0d314, 0 0 150px #e0d314
+  }
+
+button, button:focus{
+    outline: none;
+}
+#particles-js{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+}

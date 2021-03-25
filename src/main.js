@@ -17,6 +17,7 @@ const createWindow = () => {
     height: 600,
     frame: false,
     show: false,
+    resizable: false,
     webPreferences: {
       nodeIntegration: true,
       enableRemoteModule: true,
@@ -28,7 +29,7 @@ const createWindow = () => {
   mainWindow.loadURL(`file://${__dirname}/index.html`);
 
   // Open the DevTools.
-  mainWindow.webContents.openDevTools();
+  // mainWindow.webContents.openDevTools();
 
   // Load when content is ready
   mainWindow.once('ready-to-show', () => {
@@ -91,7 +92,7 @@ ipc.on('notify', function (event, arg) {
         enableRemoteModule: true,
       }
     });
-    resWindow.webContents.openDevTools();
+    // resWindow.webContents.openDevTools();
     resWindow.loadURL(arg);
 
   })

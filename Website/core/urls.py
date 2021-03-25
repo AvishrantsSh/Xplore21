@@ -6,8 +6,9 @@ from django.conf.urls.static import static
 urlpatterns = [
     path('', HomeView, name='home'),
     path('getstream', Stream, name='streamdt'),
+    path('gettokenstream/<token>', StreamToken, name='streamtk'),
     path('stream/', StreamView, name='streamroom'),
-    path('streamtoken/<token>', StreamToken, name='stokenview'),
+    path('streamtoken/<token>', StreamTokenView, name='stokenview'),
     path('api/', APIEnd, name='api')
 ]
 

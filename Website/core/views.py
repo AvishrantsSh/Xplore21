@@ -61,6 +61,13 @@ def Stream(request):
     except StreamingHttpResponse.HttpResponseServerError as e:
         print("aborted")
 
+@gzip.gzip_page
+def StreamToken(request, token):
+    try:
+        entry = DocModel.objects.filter(stoken=token).last()
+        return StreamingHttpResponse(gen(VideoCamera(entry.vid.url)), content_type="multipart/x-mixed-replace;boundary=frame")
+    except StreamingHttpResponse.HttpResponseServerError as e:
+        print("aborted")
 
 def HomeView(request):
     if request.method == 'POST':
@@ -79,19 +86,17 @@ def StreamView(request):
     entry = DocModel.objects.all().last()
     if entry is None:
         return JsonResponse({'message': 'No Video Files Yet!'})
-    return render(request, 'stream.html', {'url': 'http://127.0.0.1:8000'+entry.vid.url})
+    return render(request, 'stream.html')
 
 
 # API End Point
-
-
-def StreamToken(request, token):
+def StreamTokenView(request, token):
     try:
         entry = DocModel.objects.filter(stoken=token).last()
         if entry is None:
             return JsonResponse({'message': 'Token Not Registered'})
 
-        return render(request, 'streamtoken.html', {'url': 'http://127.0.0.1:8000'+entry.vid.url})
+        return render(request, 'streamtoken.html', {'token': token})
 
     except DocModel.DoesNotExist:
         return JsonResponse({'message': 'Token Not Registered'})

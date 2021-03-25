@@ -9,8 +9,8 @@ const delay = ms => new Promise(res => setTimeout(res, ms));
 // Control Buttons
 const closeBtn = document.getElementById('closeBtn')
 const minBtn = document.getElementById('minBtn')
-const resBtn = document.getElementById('resBtn')
-const modeBtn = document.getElementById('modeSwitch')
+const onlineBtn = document.getElementById('onlineBtn')
+const offlineBtn = document.getElementById('offlineBtn')
 const vidForm = document.getElementById('vid-form')
 let online = false
 
@@ -23,29 +23,18 @@ minBtn.addEventListener('click', function () {
     currWin.minimize()
 })
 
-resBtn.addEventListener('click', function () {
-    if (currWin.isMaximized()) {
-        currWin.unmaximize()
-        maxmin.className = "far fa-clone";
-    }
-    else {
-        if (currWin.maximizable) {
-            currWin.maximize()
-            maxmin.className = "far fa-square";
-        }
-    }
+onlineBtn.addEventListener('click', () => {
+    notify('Switched to Online Mode')
+    document.getElementById('mode').textContent = 'Online'
+    document.getElementById('addr').textContent = 'http://amazon.com'
+    online = true
 })
 
-modeBtn.addEventListener('click', () => {
-    console.log('Toggled!!')
-    if (modeBtn.checked == true) {
-        notify('Switched to Online Mode')
-        online = true
-    }
-    else {
-        online = false
-        notify('Switched to Offline Mode')
-    }
+offlineBtn.addEventListener('click', () => {
+    notify('Switched to Offline Mode')
+    document.getElementById('mode').textContent = 'Offline'
+    document.getElementById('addr').textContent = 'http://localhost:8000/'
+    online = false
 })
 
 document.getElementById('vid').onchange = async => {
@@ -61,12 +50,7 @@ function notify(msg) {
     snack()
 }
 
-function init() {
-    if (currWin.isMaximized())
-        maxmin.className = 'far fa-square'
-    else
-        maxmin.className = "far fa-clone";
-}
+
 function sendFile() {
     var formData = new FormData();
     var vidFile = document.querySelector('#vid');
@@ -90,5 +74,8 @@ function sendFile() {
         console.error(error)
     })
 }
-window.onload = init
 console.log('Script is Working Fine')
+
+particlesJS.load('particles-js', '../assets/particles.json', function () {
+    console.log('callback - particles.js config loaded');
+});
