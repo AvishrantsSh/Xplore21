@@ -1,5 +1,8 @@
 import { app, BrowserWindow, Notification } from 'electron';
 const ipc = require('electron').ipcMain
+const path = require('path')
+
+let mynotification
 
 // Handle creating/removing shortcuts on Windows when installing/uninstalling.
 if (require('electron-squirrel-startup')) { // eslint-disable-line global-require
@@ -15,6 +18,7 @@ const createWindow = () => {
   mainWindow = new BrowserWindow({
     width: 800,
     height: 600,
+    backgroundColor: '#333',
     frame: false,
     show: false,
     resizable: false,
@@ -75,9 +79,37 @@ app.on('activate', () => {
 // In this file you can include the rest of your app's specific main process
 // code. You can also put them in separate files and import them here.
 ipc.on('notify', function (event, arg) {
-  const mynotification = new Notification({
-    title: 'Message',
-    body: 'Lorem Ipsum'
+  mynotification = new Notification({
+    title: 'Xplore',
+    body: 'Your video has been analyzed. Click to view!',
+    icon: path.join(__dirname, '../assets/images/favicon.png')
+  })
+
+  mynotification.addListener('click', () => {
+    let resWindow = new BrowserWindow({
+      minWidth: 800,
+      minHeight: 600,
+      resizable: false,
+      backgroundColor: '#333',
+      frame: false,
+      // show: false,
+      webPreferences: {
+        nodeIntegration: true,
+        enableRemoteModule: true,
+      }
+    });
+    // resWindow.webContents.openDevTools();
+    resWindow.loadURL(arg);
+
+  })
+  mynotification.show()
+})
+
+ipc.on('error', () => {
+  mynotification = new Notification({
+    title: 'Xplore',
+    body: 'There was some error communicating with server. Please try again later',
+    icon: path.join(__dirname, '../assets/images/favicon.png')
   })
 
   mynotification.addListener('click', () => {

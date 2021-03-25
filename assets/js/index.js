@@ -12,7 +12,7 @@ const minBtn = document.getElementById('minBtn')
 const onlineBtn = document.getElementById('onlineBtn')
 const offlineBtn = document.getElementById('offlineBtn')
 const vidForm = document.getElementById('vid-form')
-let online = false
+let online = true
 
 // Event Listeners
 closeBtn.addEventListener('click', function () {
@@ -54,24 +54,27 @@ function notify(msg) {
 function sendFile() {
     var formData = new FormData();
     var vidFile = document.querySelector('#vid');
-    formData.append("stoken", "test123")
+    formData.append("stoken", "nasph9jvFYHGw9")
     formData.append("vid", vidFile.files[0]);
 
     let url = ''
     if (online == true)
-        url = 'http://ec2-18-206-46-76.compute-1.amazonaws.com:8000/'
+        url = 'http://ec2-18-206-46-76.compute-1.amazonaws.com:8000/api/'
     else
         url = 'http://localhost:8000/api/'
 
+    console.log('Sending to '+url)
+    notify('Please be patient, your request is being processed')
     axios.post(url, formData, {
         headers: {
             'Content-Type': 'multipart/form-data'
-        }
+        },
+        timeout : 30000,
     }).then(res => {
         console.log(res.data.vidurl)
         ipc.send('notify', res.data.vidurl)
     }).catch(error => {
-        console.error(error)
+        ipc.send('error')
     })
 }
 console.log('Script is Working Fine')
