@@ -13,7 +13,7 @@ The system will detect and simultaneously alert any violent activity captured by
 ![Tensorflow](https://img.shields.io/badge/TensorFlow%20-%23FF6F00.svg?&style=for-the-badge&logo=TensorFlow&logoColor=white)&nbsp;
 ![Keras](https://img.shields.io/badge/Keras%20-%23D00000.svg?&style=for-the-badge&logo=Keras&logoColor=white)&nbsp;
 ![Django](https://img.shields.io/badge/django%20-%23092E20.svg?&style=for-the-badge&logo=django&logoColor=white)&nbsp;
-![Node.js](https://img.shields.io/badge/node.js%20-%2343853D.svg?&style=for-the-badge&logo=node.js&logoColor=white)&nbsp;
+![Node.js](https://img.shields.io/badge/node.js%20-%2343853D.svg?&style=for-the-badge&logo=node.js&logoColor=white)&nbsp;<br>
 ![AWS](https://img.shields.io/badge/AWS%20-%23FF9900.svg?&style=for-the-badge&logo=amazon-aws&logoColor=white)&nbsp;
 ![Python](https://img.shields.io/badge/python%20-%2314354C.svg?&style=for-the-badge&logo=python&logoColor=white)&nbsp;
 ![HTML](https://img.shields.io/badge/html5%20-%23E34F26.svg?&style=for-the-badge&logo=html5&logoColor=white)&nbsp;
@@ -23,7 +23,7 @@ The system will detect and simultaneously alert any violent activity captured by
 
 ## 💼 &nbsp; Testing
 Our source code can be tested and contributed to using the following steps:
-## 1. Website
+### 1. Website
 Execute the following sequence of code to start contributing and testing:
 - Open the directory labelled Website using the command
     > cd Website
@@ -47,7 +47,7 @@ Execute the following sequence of code to start contributing and testing:
 Run the migrations again to continue.
 
 
-## 2. Desktop App
+### 2. Desktop App
 Being built on top of Node.js, it is fairly easy to set-up the environment. Follow the steps to safely configure the system
 - From the parent folder directory, execute the following command
     > npm install
@@ -99,8 +99,7 @@ We tried and tested various architectures for this project. A brief summary and 
 
     <br><br>
 
-4. **Inception+CustomisedCNN**: Using transfer learning of Inception Architecture and passing it to CustomisedCNN trained the model with satisfactory results. 
-*Link to model file* : [Google Drive Link](https://drive.google.com/file/d/1yTbm7oMn1znMEOD7X-s9NDqtyvpUZfTe/view?usp=sharing)
+4. **Inception+CustomisedCNN**: Using transfer learning of Inception Architecture and passing it to CustomisedCNN trained the model with satisfactory results.
     - Training_accuracy: 89%
     - Validation_accuracy: 76%
     - Epochs: 30
@@ -111,7 +110,7 @@ We tried and tested various architectures for this project. A brief summary and 
     <p align="center">
     <img src="Machine Learning/stats/CustomisedInceptionV3+CNN.png">
     </p>
-    <br><br>
+    <br>
 
 ### ⚙️ &nbsp; Ultimate Objective
 The model uses the technique of Multiple Object Detection with Localization tracking the movement of people and then categorizing it into violent or non-violent behavior. Our proposed solution will ensure Public Safety and security without any human toil with an instant alert to the concerned authorities. Through ***Crowd Monitoring and Behavioral Analysis*** our solution aims to evoke the sense of security in men and women. The constant rise of criminal activities, their unexpectedness, and scope of harm that can be inflicted can be exponentially reduced through our proposed system. 
@@ -120,11 +119,11 @@ The model uses the technique of Multiple Object Detection with Localization trac
 
 
 ## Link to Desktop Apps
-| Platform&nbsp;&nbsp;&nbsp;    | Link &nbsp;&nbsp;&nbsp;&nbsp;|
+| Platform&nbsp;&nbsp;&nbsp;    | &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Link &nbsp;&nbsp;&nbsp;&nbsp;|
 | ----------- | ---- |
-| Windows (.exe) |[Link](https://github.com/AvishrantsSh/Xplore21/releases/download/v1.1.0/xplore-Setup-1.1.0.exe)|
-| Linux (.AppImage) &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|[Link](https://github.com/AvishrantsSh/Xplore21/releases/download/v1.1.0/xplore-1.1.0.AppImage) |
-| Mac (.dmg) |[Link](https://github.com/AvishrantsSh/Xplore21/releases/download/v1.1.0/xplore-1.1.0.dmg) |
+| Windows (.exe) |&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[Link](https://github.com/AvishrantsSh/Xplore21/releases/download/v1.1.0/xplore-Setup-1.1.0.exe)|
+| Linux (.AppImage) &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[Link](https://github.com/AvishrantsSh/Xplore21/releases/download/v1.1.0/xplore-1.1.0.AppImage) |
+| Mac (.dmg) |&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[Link](https://github.com/AvishrantsSh/Xplore21/releases/download/v1.1.0/xplore-1.1.0.dmg) |
 
 <br>
 
