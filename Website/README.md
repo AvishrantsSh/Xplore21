@@ -1,3 +1,3 @@
-# Xplore '21
+# Project Vision
 
 A Django powered API endpoint for our project.
