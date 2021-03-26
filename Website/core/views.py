@@ -23,6 +23,9 @@ class VideoCamera(object):
         self.THRESH = 0.5
         self.url = 0 if url is None else '.'+url
         self.video = cv2.VideoCapture(self.url)
+        self.skipCount = 2
+        self.prev = None
+        self.fcount = 0
 
     def __del__(self):
         self.video.release()
@@ -32,18 +35,25 @@ class VideoCamera(object):
         if not ret:
             self.status = False
             pass
-        tmp = cv2.resize(image, self.SIZE)
-        tmp = tmp / 255.0
-        pred = model.predict(np.array([tmp]))
-        string = "Suspicious" if pred[0][0] > self.THRESH else "Peaceful"
-        string += f" {str(pred[0][0])}"
-        color = (255, 255, 255) if pred[0][0] > self.THRESH else (255, 0, 0)
+
+        if self.fcount % self.skipCount == 0:
+            tmp = cv2.resize(image, self.SIZE)
+            tmp = tmp / 255.0
+            pred = model.predict(np.array([tmp]))
+            string = "Suspicious" if pred[0][0] > self.THRESH else "Peaceful"
+            string += f" {str(pred[0][0])}"
+            self.prev = string
+
+        else:
+            string = self.prev
+
         color = (255, 255, 255)
-        image = cv2.rectangle(image, (20, 20), (600, 100), (0, 200, 100), cv2.FILLED) if pred[0][0] <= self.THRESH else cv2.rectangle(
+        image = cv2.rectangle(image, (20, 20), (600, 100), (0, 200, 100), cv2.FILLED) if string.split(' ')[0] == 'Peaceful' else cv2.rectangle(
             image, (20, 20), (600, 100), (0, 0, 255), cv2.FILLED)
         image = cv2.putText(image, string, self.org, self.font,
                             self.fontScale, color, self.thickness, cv2.LINE_AA)
         ret, jpeg = cv2.imencode('.jpg', image)
+        self.fcount += 1
         return jpeg.tobytes()
 
 
@@ -61,6 +71,7 @@ def Stream(request):
     except StreamingHttpResponse.HttpResponseServerError as e:
         print("aborted")
 
+
 @gzip.gzip_page
 def StreamToken(request, token):
     try:
@@ -68,6 +79,7 @@ def StreamToken(request, token):
         return StreamingHttpResponse(gen(VideoCamera(entry.vid.url)), content_type="multipart/x-mixed-replace;boundary=frame")
     except StreamingHttpResponse.HttpResponseServerError as e:
         print("aborted")
+
 
 def HomeView(request):
     if request.method == 'POST':

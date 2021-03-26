@@ -54,28 +54,33 @@ function notify(msg) {
 function sendFile() {
     var formData = new FormData();
     var vidFile = document.querySelector('#vid');
-    formData.append("stoken", "nasph9jvFYHGw9")
-    formData.append("vid", vidFile.files[0]);
+    if (vidFile.files[0].size > 15728640) {
+        notify('File too large')
+    }
+    else {
+        formData.append("stoken", "nasph9jvFYHGw9")
+        formData.append("vid", vidFile.files[0]);
 
-    let url = ''
-    if (online == true)
-        url = 'http://ec2-18-206-46-76.compute-1.amazonaws.com:8000/api/'
-    else
-        url = 'http://localhost:8000/api/'
+        let url = ''
+        if (online == true)
+            url = 'http://ec2-18-206-46-76.compute-1.amazonaws.com:8000/api/'
+        else
+            url = 'http://localhost:8000/api/'
 
-    console.log('Sending to '+url)
-    notify('Please be patient, your request is being processed')
-    axios.post(url, formData, {
-        headers: {
-            'Content-Type': 'multipart/form-data'
-        },
-        timeout : 30000,
-    }).then(res => {
-        console.log(res.data.vidurl)
-        ipc.send('notify', res.data.vidurl)
-    }).catch(error => {
-        ipc.send('error')
-    })
+        console.log('Sending to ' + url)
+        notify('Please be patient, your request is being processed')
+        axios.post(url, formData, {
+            headers: {
+                'Content-Type': 'multipart/form-data'
+            },
+            timeout: 30000,
+        }).then(res => {
+            console.log(res.data.vidurl)
+            ipc.send('notify', res.data.vidurl)
+        }).catch(error => {
+            ipc.send('error')
+        })
+    }
 }
 console.log('Script is Working Fine')
 

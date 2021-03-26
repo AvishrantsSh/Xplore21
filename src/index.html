@@ -47,10 +47,16 @@
       <div class="w-100 text-center mt-5"><span id="glow">Vision</span></div>
       <div class="d-flex flex-column justify-content-center align-items-center" style="height: 70vh;">
         <form id="vid-form">
-          <input type="file" name="vid-file" id="vid" hidden>
+          <input type="file" name="vid-file" id="vid" hidden accept=".mp4">
           <label for="vid" class=" fBtn cta-btn align-middle" style="cursor: pointer;">Choose Video File</label>
           <button class="btn btn-secondary" hidden>Submit</button>
         </form>
+        <div>
+          <span style="font-size: 17px;">Extension .mp4</span>
+        </div>
+        <div>
+          <span style="font-size: 17px;">Max Size 15 MB</span>
+        </div>
         <div class="mt-3">
           <span style="font-size: 20px;">Mode : </span><span id="mode">Online</span>
         </div>
