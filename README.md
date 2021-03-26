@@ -121,9 +121,9 @@ The model uses the technique of Multiple Object Detection with Localization trac
 ## Link to Desktop Apps
 | Platform&nbsp;&nbsp;&nbsp;    | &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Link &nbsp;&nbsp;&nbsp;&nbsp;|
 | ----------- | ---- |
-| Windows (.exe) |&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[Link](https://github.com/AvishrantsSh/Xplore21/releases/download/v1.1.0/xplore-Setup-1.1.0.exe)|
-| Linux (.AppImage) &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[Link](https://github.com/AvishrantsSh/Xplore21/releases/download/v1.1.0/xplore-1.1.0.AppImage) |
-| Mac (.dmg) |&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[Link](https://github.com/AvishrantsSh/Xplore21/releases/download/v1.1.0/xplore-1.1.0.dmg) |
+| Windows (.exe) |&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[Link](https://github.com/AvishrantsSh/Xplore21/releases/download/v1.1.1/xplore-Setup-1.1.0.exe)|
+| Linux (.AppImage) &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[Link](https://github.com/AvishrantsSh/Xplore21/releases/download/v1.1.1/xplore-1.1.0.AppImage) |
+| Mac (.dmg) |&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[Link](https://github.com/AvishrantsSh/Xplore21/releases/download/v1.1.1/xplore-1.1.0.dmg) |
 
 <br>
 
