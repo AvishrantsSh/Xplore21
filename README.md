@@ -26,23 +26,34 @@ Our source code can be tested and contributed to using the following steps:
 ### 1. Website
 Execute the following sequence of code to start contributing and testing:
 - Open the directory labelled Website using the command
-    > cd Website
+    ```sh
+    cd Website
+    ```
 
 - Install all the dependencies using
-    > pip3 install -r requirements.txt
+    ```sh
+    pip3 install -r requirements.txt
+    ```
 
 - Run the migrations using the following commands
-    > python3 manage.py makemigrations
-
-    > python3 manage.py migrate
+    ```sh
+    python3 manage.py makemigrations
+    ```
+    ```sh
+    python3 manage.py migrate
+    ```
 
 - Run the Django server by
-    > python3 manage.py runserver
+    ```sh
+    python3 manage.py runserver
+    ```
 
 <br>
 
 *Note :*  In case you encounter errors during migrations, make sure that you have access rights to *db.sqlite3* file. You can use the following command to rectify permission denied error
-> chown *username* db.sqlite3
+```sh
+chown *username* db.sqlite3
+```
 
 Run the migrations again to continue.
 
@@ -50,10 +61,14 @@ Run the migrations again to continue.
 ### 2. Desktop App
 Being built on top of Node.js, it is fairly easy to set-up the environment. Follow the steps to safely configure the system
 - From the parent folder directory, execute the following command
-    > npm install
+    ```sh
+    npm install
+    ```
 
 - Once finished, the application can be run using
-    > npm start
+    ```sh
+    npm start
+    ```
 
 - The desktop app has two modes of operation: **Offline** and **Online**. By default the app function in **Online** mode. To make it work in **Offline** mode, use the menu button provided on top of UI and select Offline mode.
 <br><br>
@@ -129,4 +144,6 @@ The model uses the technique of Multiple Object Detection with Localization trac
 
 ## Custom Build
 If you want to create the desktop app for a different platform or a different extension like **.deb**, **.rpm**, use the following command from parent folder
-> electron-forge make 
+```sh
+electron-forge make
+``` 
